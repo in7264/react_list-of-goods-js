@@ -19,7 +19,7 @@ export const goodsFromServer = [
 export const App = () => {
   const copy = [...goodsFromServer];
 
-  const [sortgoods, setSortgoods] = useState('');
+  const [sortgoods, setSortgoods] = useState('reset');
   const [isReversed, setIsReversed] = useState(false);
 
   const visibleGoods = (() => {
@@ -33,10 +33,8 @@ export const App = () => {
         sortedArray = copy.slice().sort((a, b) => a.length - b.length);
         break;
       case 'reset':
-        sortedArray = [...goodsFromServer];
-        break;
       default:
-        sortedArray = copy.slice();
+        sortedArray = [...goodsFromServer];
         break;
     }
 
